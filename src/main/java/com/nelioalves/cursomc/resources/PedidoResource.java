@@ -1,6 +1,5 @@
 package com.nelioalves.cursomc.resources;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +25,8 @@ public class PedidoResource {
     }
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<?> BuscarPorId(@PathVariable Integer id)  {
-		Pedido obj = service.buscar(id);
+	public ResponseEntity<Pedido> BuscarPorId(@PathVariable Integer id)  {
+		Pedido obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}		
 }
